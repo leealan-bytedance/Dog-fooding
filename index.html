@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PetNutrition - 高品质狗粮专家</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+            href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"
+            rel="stylesheet">
+        <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6', // 蓝色作为主色调，传达信任和专业
+                        secondary: '#F97316', // 橙色作为辅助色，传达活力和温暖
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+        <!-- TikTok Pixel Code Start -->
+        <script>
+    !function (w, d, t) {
+    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+    var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+    ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+
+    ttq.load('D14NSLRC77U2P4BEFJ90');
+    ttq.page();
+    }(window, document, 'ttq');
+    </script>
+    <!-- TikTok Pixel Code End -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .bg-blur {
+                backdrop-filter: blur(8px);
+            }
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+            .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="font-inter bg-light text-dark antialiased">
+    <!-- 导航栏 -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/90 bg-blur shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-2">
+                    <div class="h-10 w-10 rounded-full bg-primary flex items-center justify-center">
+                        <i class="fa fa-paw text-white text-xl"></i>
+                    </div>
+                    <span class="text-xl font-bold text-dark">PetNutrition</span>
+                </a>
+
+                <!-- 桌面导航 -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="font-medium text-dark hover:text-primary transition-colors">首页</a>
+                    <a href="#products" class="font-medium text-dark hover:text-primary transition-colors">产品</a>
+                    <a href="#features" class="font-medium text-dark hover:text-primary transition-colors">特色</a>
+                    <a href="#reviews" class="font-medium text-dark hover:text-primary transition-colors">评价</a>
+                    <a href="#faq" class="font-medium text-dark hover:text-primary transition-colors">常见问题</a>
+                </nav>
+
+                <!-- 右侧功能区 -->
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 rounded-full hover:bg-gray-100 transition-colors">
+                        <i class="fa fa-search text-dark"></i>
+                    </button>
+                    <button class="p-2 rounded-full hover:bg-gray-100 transition-colors">
+                        <i class="fa fa-user text-dark"></i>
+                    </button>
+                    <button id="cart-button" class="relative p-2 rounded-full hover:bg-gray-100 transition-colors">
+                        <i class="fa fa-shopping-cart text-dark"></i>
+                        <span
+                            class="absolute -top-1 -right-1 bg-secondary text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </button>
+                    <button id="mobile-menu-button"
+                        class="md:hidden p-2 rounded-full hover:bg-gray-100 transition-colors">
+                        <i class="fa fa-bars text-dark"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 移动端导航菜单 -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg absolute w-full">
+            <div class="container mx-auto px-4 py-4 space-y-4">
+                <a href="#home" class="block py-2 font-medium text-dark hover:text-primary transition-colors">首页</a>
+                <a href="#products" class="block py-2 font-medium text-dark hover:text-primary transition-colors">产品</a>
+                <a href="#features" class="block py-2 font-medium text-dark hover:text-primary transition-colors">特色</a>
+                <a href="#reviews" class="block py-2 font-medium text-dark hover:text-primary transition-colors">评价</a>
+                <a href="#faq" class="block py-2 font-medium text-dark hover:text-primary transition-colors">常见问题</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 购物车侧边栏 -->
+    <div id="cart-sidebar"
+        class="fixed top-0 right-0 h-full w-full md:w-96 bg-white shadow-xl transform translate-x-full transition-transform duration-300 z-50 overflow-y-auto">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-xl font-bold">购物车</h2>
+                <button id="close-cart" class="p-2 rounded-full hover:bg-gray-100 transition-colors">
+                    <i class="fa fa-times text-dark"></i>
+                </button>
+            </div>
+
+            <div id="cart-items" class="space-y-6">
+                <!-- 购物车为空时显示 -->
+                <div id="empty-cart" class="text-center py-12">
+                    <i class="fa fa-shopping-cart text-gray-300 text-5xl mb-4"></i>
+                    <p class="text-gray-500">购物车是空的</p>
+                    <button id="continue-shopping"
+                        class="mt-4 px-6 py-2 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors">
+                        继续购物
+                    </button>
+                </div>
+
+                <!-- 购物车有商品时显示 -->
+                <div id="cart-items-list" class="hidden space-y-6">
+                    <!-- 商品项会通过JavaScript动态添加 -->
+                </div>
+            </div>
+
+            <div id="cart-summary" class="hidden mt-8 pt-6 border-t border-gray-200">
+                <div class="flex justify-between mb-4">
+                    <span class="text-gray-600">小计</span>
+                    <span id="subtotal" class="font-medium">¥0.00</span>
+                </div>
+                <div class="flex justify-between mb-6">
+                    <span class="text-gray-600">配送费</span>
+                    <span id="shipping" class="font-medium">¥0.00</span>
+                </div>
+                <div class="flex justify-between font-bold text-lg mb-8">
+                    <span>总计</span>
+                    <span id="total" class="text-primary">¥0.00</span>
+                </div>
+                <button
+                    class="w-full py-3 bg-secondary text-white rounded-full font-medium hover:bg-secondary/90 transition-colors">
+                    结算
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 英雄区域 -->
+    <section id="home" class="pt-24 md:pt-32 pb-16 md:pb-24">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0">
+                    <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-tight text-dark mb-6">
+                        给您的爱宠<br>
+                        <span class="text-primary">最天然的营养</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-xl">
+                        精选优质原料，科学配方，为您的狗狗提供全面均衡的营养，让它们保持健康活力。
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#products"
+                            class="px-8 py-3 bg-primary text-white rounded-full font-medium hover:bg-primary/90 transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
+                            立即选购
+                        </a>
+                        <a href="#features"
+                            class="px-8 py-3 bg-white text-primary border border-primary rounded-full font-medium hover:bg-gray-50 transition-all transform hover:-translate-y-1">
+                            了解更多
+                        </a>
+                    </div>
+
+                    <!-- 特点标签 -->
+                    <div class="flex flex-wrap gap-4 mt-12">
+                        <div class="flex items-center space-x-2 bg-white p-3 rounded-lg shadow-sm">
+                            <i class="fa fa-leaf text-green-500 text-xl"></i>
+                            <span>天然成分</span>
+                        </div>
+                        <div class="flex items-center space-x-2 bg-white p-3 rounded-lg shadow-sm">
+                            <i class="fa fa-certificate text-secondary text-xl"></i>
+                            <span>品质认证</span>
+                        </div>
+                        <div class="flex items-center space-x-2 bg-white p-3 rounded-lg shadow-sm">
+                            <i class="fa fa-truck text-primary text-xl"></i>
+                            <span>当日送达</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 relative">
+                    <div
+                        class="relative z-10 rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-500">
+                        <img src="https://picsum.photos/seed/dogfood1/800/600" alt="优质狗粮展示"
+                            class="w-full h-auto object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-secondary rounded-full opacity-20"></div>
+                    <div class="absolute -top-6 -right-6 w-40 h-40 bg-primary rounded-full opacity-10"></div>
+
+                    <!-- 浮动标签 -->
+                    <div class="absolute -bottom-4 -right-4 bg-white p-4 rounded-lg shadow-xl z-20">
+                        <div class="flex items-center space-x-2">
+                            <div class="flex">
+                                <i class="fa fa-star text-yellow-400"></i>
+                                <i class="fa fa-star text-yellow-400"></i>
+                                <i class="fa fa-star text-yellow-400"></i>
+                                <i class="fa fa-star text-yellow-400"></i>
+                                <i class="fa fa-star text-yellow-400"></i>
+                            </div>
+                            <span class="font-medium">4.9/5</span>
+                        </div>
+                        <p class="text-sm text-gray-500">来自5000+满意客户</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 特色区域 -->
+    <section id="features" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">为什么选择我们的狗粮</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">我们坚持使用最优质的原料，采用科学配方，为您的爱宠提供最全面的营养</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 特色项1 -->
+                <div
+                    class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow transform hover:-translate-y-1 duration-300">
+                    <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-leaf text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">纯天然成分</h3>
+                    <p class="text-gray-600">不含人工添加剂、防腐剂和色素，全部采用天然原料，为您的狗狗提供最健康的饮食。</p>
+                </div>
+
+                <!-- 特色项2 -->
+                <div
+                    class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow transform hover:-translate-y-1 duration-300">
+                    <div class="w-14 h-14 bg-secondary/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-flask text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">科学配方</h3>
+                    <p class="text-gray-600">由宠物营养专家精心研发，根据不同品种、年龄和体型的狗狗需求，提供定制化营养方案。</p>
+                </div>
+
+                <!-- 特色项3 -->
+                <div
+                    class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow transform hover:-translate-y-1 duration-300">
+                    <div class="w-14 h-14 bg-green-500/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-heart text-green-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">增强免疫力</h3>
+                    <p class="text-gray-600">富含抗氧化剂、维生素和矿物质，帮助增强狗狗的免疫系统，减少生病几率。</p>
+                </div>
+
+                <!-- 特色项4 -->
+                <div
+                    class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow transform hover:-translate-y-1 duration-300">
+                    <div class="w-14 h-14 bg-blue-500/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-paw text-blue-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">健康皮肤和毛发</h3>
+                    <p class="text-gray-600">添加Omega-3和Omega-6脂肪酸，帮助改善皮肤健康，使毛发更加亮泽顺滑。</p>
+                </div>
+
+                <!-- 特色项5 -->
+                <div
+                    class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow transform hover:-translate-y-1 duration-300">
+                    <div class="w-14 h-14 bg-purple-500/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-balance-scale text-purple-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">消化易吸收</h3>
+                    <p class="text-gray-600">采用易消化的蛋白质和纤维，有助于维持肠道健康，减少消化问题。</p>
+                    </p>
+                </div>
+
+                <!-- 特色项6 -->
+                <div
+                    class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow transform hover:-translate-y-1 duration-300">
+                    <div class="w-14 h-14 bg-red-500/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-bolt text-red-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">活力充沛</h3>
+                    <p class="text-gray-600">均衡的能量来源，帮助狗狗保持活力充沛，满足日常活动和运动需求。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品区域 -->
+    <section id="products" class="py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">我们的产品系列</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">为不同年龄、体型和需求的狗狗提供专业营养解决方案</p>
+            </div>
+
+            <!-- 产品筛选 -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="filter-btn active px-6 py-2 rounded-full bg-primary text-white font-medium">全部产品</button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full bg-gray-100 text-dark font-medium hover:bg-gray-200 transition-colors">幼犬粮</button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full bg-gray-100 text-dark font-medium hover:bg-gray-200 transition-colors">成犬粮</button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full bg-gray-100 text-dark font-medium hover:bg-gray-200 transition-colors">老年犬粮</button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full bg-gray-100 text-dark font-medium hover:bg-gray-200 transition-colors">特殊配方</button>
+            </div>
+
+            <!-- 产品网格 -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- 产品项1 -->
+                <div
+                    class="product-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="relative">
+                        <img src="https://picsum.photos/seed/dogfood2/400/300" alt="幼犬成长配方"
+                            class="w-full h-64 object-cover">
+                        <div
+                            class="absolute top-4 left-4 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full">
+                            热销</div>
+                        <button
+                            class="quick-view-btn absolute top-4 right-4 bg-white/80 hover:bg-white text-dark p-2 rounded-full opacity-0 hover:opacity-100 transition-opacity">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-bold">幼犬成长配方</h3>
+                            <div class="flex text-yellow-400">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-4">专为2-12个月幼犬设计的高营养配方，促进骨骼和肌肉发育</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-primary">¥169.00</span>
+                            <button
+                                class="add-to-cart-btn p-3 bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-colors"
+                                data-id="1" data-name="幼犬成长配方" data-price="169">
+                                <i class="fa fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 产品项2 -->
+                <div
+                    class="product-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="relative">
+                        <img src="https://picsum.photos/seed/dogfood3/400/300" alt="成犬全期配方"
+                            class="w-full h-64 object-cover">
+                        <button
+                            class="quick-view-btn absolute top-4 right-4 bg-white/80 hover:bg-white text-dark p-2 rounded-full opacity-0 hover:opacity-100 transition-opacity">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-bold">成犬全期配方</h3>
+                            <div class="flex text-yellow-400">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-4">适合1-7岁成犬的均衡营养配方，维持健康体重和活力</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-primary">¥149.00</span>
+                            <button
+                                class="add-to-cart-btn p-3 bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-colors"
+                                data-id="2" data-name="成犬全期配方" data-price="149">
+                                <i class="fa fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 产品项3 -->
+                <div
+                    class="product-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="relative">
+                        <img src="https://picsum.photos/seed/dogfood4/400/300" alt="老年犬呵护配方"
+                            class="w-full h-64 object-cover">
+                        <div
+                            class="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            新品</div>
+                        <button
+                            class="quick-view-btn absolute top-4 right-4 bg-white/80 hover:bg-white text-dark p-2 rounded-full opacity-0 hover:opacity-100 transition-opacity">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-bold">老年犬呵护配方</h3>
+                            <div class="flex text-yellow-400">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-4">为7岁以上老年犬设计，关节呵护，易消化，维持健康活力</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-primary">¥189.00</span>
+                            <button
+                                class="add-to-cart-btn p-3 bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-colors"
+                                data-id="3" data-name="老年犬呵护配方" data-price="189">
+                                <i class="fa fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 产品项4 -->
+                <div
+                    class="product-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="relative">
+                        <img src="https://picsum.photos/seed/dogfood5/400/300" alt="敏感皮肤配方"
+                            class="w-full h-64 object-cover">
+                        <button
+                            class="quick-view-btn absolute top-4 right-4 bg-white/80 hover:bg-white text-dark p-2 rounded-full opacity-0 hover:opacity-100 transition-opacity">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-bold">敏感皮肤配方</h3>
+                            <div class="flex text-yellow-400">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-4">低敏配方，不含常见过敏原，缓解皮肤瘙痒和过敏问题</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-primary">¥199.00</span>
+                            <button
+                                class="add-to-cart-btn p-3 bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-colors"
+                                data-id="4" data-name="敏感皮肤配方" data-price="199">
+                                <i class="fa fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 产品项5 -->
+                <div
+                    class="product-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="relative">
+                        <img src="https://picsum.photos/seed/dogfood6/400/300" alt="大型犬专用粮"
+                            class="w-full h-64 object-cover">
+                        <button
+                            class="quick-view-btn absolute top-4 right-4 bg-white/80 hover:bg-white text-dark p-2 rounded-full opacity-0 hover:opacity-100 transition-opacity">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-bold">大型犬专用粮</h3>
+                            <div class="flex text-yellow-400">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-4">为大型犬设计的特殊颗粒和营养配比，支持骨骼健康和关节保护</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-primary">¥179.00</span>
+                            <button
+                                class="add-to-cart-btn p-3 bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-colors"
+                                data-id="5" data-name="大型犬专用粮" data-price="179">
+                                <i class="fa fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 产品项6 -->
+                <div
+                    class="product-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="relative">
+                        <img src="https://picsum.photos/seed/dogfood7/400/300" alt="小型犬专用粮"
+                            class="w-full h-64 object-cover">
+                        <button
+                            class="quick-view-btn absolute top-4 right-4 bg-white/80 hover:bg-white text-dark p-2 rounded-full opacity-0 hover:opacity-100 transition-opacity">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-bold">小型犬专用粮</h3>
+                            <div class="flex text-yellow-400">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-4">小颗粒设计，高能量密度，满足小型犬的特殊营养需求</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-primary">¥159.00</span>
+                            <button
+                                class="add-to-cart-btn p-3 bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-colors"
+                                data-id="6" data-name="小型犬专用粮" data-price="159">
+                                <i class="fa fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 产品项7 -->
+                <div
+                    class="product-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="relative">
+                        <img src="https://picsum.photos/seed/dogfood8/400/300" alt="高蛋白活力配方"
+                            class="w-full h-64 object-cover">
+                        <div
+                            class="absolute top-4 left-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            限量</div>
+                        <button
+                            class="quick-view-btn absolute top-4 right-4 bg-white/80 hover:bg-white text-dark p-2 rounded-full opacity-0 hover:opacity-100 transition-opacity">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-bold">高蛋白活力配方</h3>
+                            <div class="flex text-yellow-400">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-4">高蛋白含量，适合活跃犬种和工作犬，提供持久能量</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-primary">¥219.00</span>
+                            <button
+                                class="add-to-cart-btn p-3 bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-colors"
+                                data-id="7" data-name="高蛋白活力配方" data-price="219">
+                                <i class="fa fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 产品项8 -->
+                <div
+                    class="product-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="relative">
+                        <img src="https://picsum.photos/seed/dogfood9/400/300" alt="低卡路里配方"
+                            class="w-full h-64 object-cover">
+                        <button
+                            class="quick-view-btn absolute top-4 right-4 bg-white/80 hover:bg-white text-dark p-2 rounded-full opacity-0 hover:opacity-100 transition-opacity">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-bold">低卡路里配方</h3>
+                            <div class="flex text-yellow-400">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-4">低卡路里、高纤维配方，帮助控制体重，适合需要减重的狗狗</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-primary">¥169.00</span>
+                            <button
+                                class="add-to-cart-btn p-3 bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-colors"
+                                data-id="8" data-name="低卡路里配方" data-price="169">
+                                <i class="fa fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 加载更多按钮 -->
+            <div class="text-center mt-12">
+                <button
+                    class="px-8 py-3 border border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-white transition-colors">
+                    加载更多产品
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品详情模态框 -->
+    <div id="product-modal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto m-4">
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <h2 id="modal-title" class="text-2xl font-bold">产品详情</h2>
+                    <button id="close-modal" class="p-2 rounded-full hover:bg-gray-100 transition-colors">
+                        <i class="fa fa-times text-dark"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="relative">
+                        <img id="modal-image" src="https://picsum.photos/seed/dogfood1/600/600" alt="产品图片"
+                            class="w-full h-auto rounded-lg">
+                        <div id="modal-badge"
+                            class="absolute top-4 left-4 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full hidden">
+                            热销</div>
+                    </div>
+
+                    <div>
+                        <div class="flex text-yellow-400 mb-4">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                            <span class="text-gray-500 ml-2">(120条评价)</span>
+                        </div>
+
+                        <div class="mb-6">
+                            <span class="text-gray-500">价格</span>
+                            <p id="modal-price" class="text-2xl font-bold text-primary mt-1">¥169.00</p>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="font-bold mb-2">产品描述</h3>
+                            <p id="modal-description" class="text-gray-600">
+                                专为2-12个月幼犬设计的高营养配方，促进骨骼和肌肉发育。富含优质蛋白质、必需脂肪酸和多种维生素矿物质，满足幼犬快速生长的营养需求。采用易消化的原料，减轻幼犬肠胃负担，同时添加益生菌，维护肠道健康。
+                            </p>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="font-bold mb-2">规格选择</h3>
+                            <div class="flex flex-wrap gap-3">
+                                <button
+                                    class="spec-btn active px-4 py-2 border border-primary text-primary rounded-lg">2kg</button>
+                                <button
+                                    class="spec-btn px-4 py-2 border border-gray-200 text-gray-600 rounded-lg hover:border-primary hover:text-primary transition-colors">5kg</button>
+                                <button
+                                    class="spec-btn px-4 py-2 border border-gray-200 text-gray-600 rounded-lg hover:border-primary hover:text-primary transition-colors">10kg</button>
+                            </div>
+                        </div>
+
+                        <div class="mb-8">
+                            <h3 class="font-bold mb-2">数量</h3>
+                            <div class="flex items-center">
+                                <button
+                                    class="quantity-btn minus w-10 h-10 flex items-center justify-center border border-gray-200 rounded-l-lg hover:bg-gray-100 transition-colors">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                                <input type="number" id="quantity-input" value="1" min="1"
+                                    class="w-16 h-10 text-center border-t border-b border-gray-200 focus:outline-none">
+                                <button
+                                    class="quantity-btn plus w-10 h-10 flex items-center justify-center border border-gray-200 rounded-r-lg hover:bg-gray-100 transition-colors">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-4">
+                            <button id="modal-add-to-cart"
+                                class="flex-1 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors flex items-center justify-center">
+                                <i class="fa fa-shopping-cart mr-2"></i>
+                                加入购物车
+                            </button>
+                            <button
+                                class="w-12 py-3 bg-gray-100 text-dark rounded-lg hover:bg-gray-200 transition-colors flex items-center justify-center">
+                                <i class="fa fa-heart-o"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 产品详情选项卡 -->
+                <div class="mt-12">
+                    <div class="flex border-b border-gray-200 mb-6">
+                        <button
+                            class="tab-btn active px-4 py-3 border-b-2 border-primary text-primary font-medium">成分</button>
+                        <button
+                            class="tab-btn px-4 py-3 border-b-2 border-transparent text-gray-500 font-medium hover:text-primary">喂养指南</button>
+                        <button
+                            class="tab-btn px-4 py-3 border-b-2 border-transparent text-gray-500 font-medium hover:text-primary">评价</button>
+                    </div>
+
+                    <div class="tab-content active">
+                        <h3 class="font-bold mb-4">主要成分</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fa fa-check text-green-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">优质动物蛋白</h4>
+                                    <p class="text-gray-500 text-sm">鸡肉、牛肉、鱼类</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fa fa-check text-green-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">必需脂肪酸</h4>
+                                    <p class="text-gray-500 text-sm">Omega-3和Omega-6</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fa fa-check text-green-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">维生素和矿物质</h4>
+                                    <p class="text-gray-500 text-sm">钙、磷、维生素A、D、E</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fa fa-check text-green-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">膳食纤维</h4>
+                                    <p class="text-gray-500 text-sm">燕麦、糙米、果蔬纤维</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content hidden">
+                        <h3 class="font-bold mb-4">每日喂养量参考</h3>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full border border-gray-200 rounded-lg">
+                                <thead>
+                                    <tr class="bg-gray-50">
+                                        <th class="px-4 py-3 text-left font-medium">体重</th>
+                                        <th class="px-4 py-3 text-left font-medium">每日喂养量</th>
+                                        <th class="px-4 py-3 text-left font-medium">建议喂食次数</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-t border-gray-200">
+                                        <td class="px-4 py-3">1-5kg</td>
+                                        <td class="px-4 py-3">30-80g</td>
+                                        <td class="px-4 py-3">3-4次</td>
+                                    </tr>
+                                    <tr class="border-t border-gray-200">
+                                        <td class="px-4 py-3">5-10kg</td>
+                                        <td class="px-4 py-3">80-150g</td>
+                                        <td class="px-4 py-3">3次</td>
+                                    </tr>
+                                    <tr class="border-t border-gray-200">
+                                        <td class="px-4 py-3">10-20kg</td>
+                                        <td class="px-4 py-3">150-250g</td>
+                                        <td class="px-4 py-3">2-3次</td>
+                                    </tr>
+                                    <tr class="border-t border-gray-200">
+                                        <td class="px-4 py-3">20kg以上</td>
+                                        <td class="px-4 py-3">250g以上</td>
+                                        <td class="px-4 py-3">2次</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="mt-4 text-gray-500 text-sm">
+                            注：具体喂养量应根据狗狗的年龄、体重、活动量和健康状况进行调整。请确保狗狗随时有清洁的饮用水。
+                        </p>
+                    </div>
+
+                    <div class="tab-content hidden">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="font-bold">用户评价</h3>
+                            <span class="text-gray-500 text-sm">共120条评价</span>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <div class="flex justify-between items-start mb-3">
+                                    <div class="flex items-center">
+                                        <img src="https://picsum.photos/seed/user1/40/40" alt="用户头像"
+                                            class="w-10 h-10 rounded-full mr-3">
+                                        <div>
+                                            <h4 class="font-medium">李**</h4>
+                                            <p class="text-gray-500 text-sm">2023-06-15</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex text-yellow-400">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600">我家金毛吃了这款幼犬粮后，毛发变得非常亮泽，食欲也很好。最重要的是，消化吸收非常好，便便很正常。会一直回购！</p>
+                            </div>
+
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <div class="flex justify-between items-start mb-3">
+                                    <div class="flex items-center">
+                                        <img src="https://picsum.photos/seed/user2/40/40" alt="用户头像"
+                                            class="w-10 h-10 rounded-full mr-3">
+                                        <div>
+                                            <h4 class="font-medium">王**</h4>
+                                            <p class="text-gray-500 text-sm">2023-05-28</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex text-yellow-400">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600">给我家泰迪买的，颗粒大小适中，很适合小型犬。吃了一段时间，感觉比之前吃的狗粮好多了，会继续支持。</p>
+                            </div>
+
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <div class="flex justify-between items-start mb-3">
+                                    <div class="flex items-center">
+                                        <img src="https://picsum.photos/seed/user3/40/40" alt="用户头像"
+                                            class="w-10 h-10 rounded-full mr-3">
+                                        <div>
+                                            <h4 class="font-medium">张**</h4>
+                                            <p class="text-gray-500 text-sm">2023-05-10</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex text-yellow-400">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600">朋友推荐的这款狗粮，说对幼犬骨骼发育很好。我家拉布拉多吃了一个月，明显感觉比以前更活泼了，而且体重也在健康增长。</p>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-8">
+                            <button
+                                class="px-6 py-2 border border-primary text-primary rounded-lg font-medium hover:bg-primary hover:text-white transition-colors">
+                                查看全部评价
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 评价区域 -->
+    <section id="reviews" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">用户真实评价</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">看看其他铲屎官对我们产品的评价</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 评价项1 -->
+                <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">"我家金毛吃了这款幼犬粮后，毛发变得非常亮泽，食欲也很好。最重要的是，消化吸收非常好，便便很正常。会一直回购！"</p>
+                    <div class="flex items-center">
+                        <img src="https://picsum.photos/seed/user4/60/60" alt="用户头像"
+                            class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-medium">李**</h4>
+                            <p class="text-gray-500 text-sm">金毛主人</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 评价项2 -->
+                <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">"给我家泰迪买的，颗粒大小适中，很适合小型犬。吃了一段时间，感觉比之前吃的狗粮好多了，会继续支持。"</p>
+                    <div class="flex items-center">
+                        <img src="https://picsum.photos/seed/user5/60/60" alt="用户头像"
+                            class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-medium">王**</h4>
+                            <p class="text-gray-500 text-sm">泰迪主人</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 评价项3 -->
+                <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">"朋友推荐的这款狗粮，说对幼犬骨骼发育很好。我家拉布拉多吃了一个月，明显感觉比以前更活泼了，而且体重也在健康增长。"</p>
+                    <div class="flex items-center">
+                        <img src="https://picsum.photos/seed/user6/60/60" alt="用户头像"
+                            class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-medium">张**</h4>
+                            <p class="text-gray-500 text-sm">拉布拉多主人</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 评价统计 -->
+            <div class="mt-16 bg-white rounded-xl p-8 shadow-sm">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-primary mb-2">4.9</div>
+                        <div class="flex justify-center text-yellow-400 mb-2">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                        </div>
+                        <p class="text-gray-600">平均评分</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-primary mb-2">5000+</div>
+                        <p class="text-gray-600">满意客户</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-primary mb-2">98%</div>
+                        <p class="text-gray-600">复购率</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section id="faq" class="py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">常见问题</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">我们收集了一些用户常见的问题，希望能帮助您更好地了解我们的产品</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-4">
+                    <!-- FAQ项1 -->
+                    <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+                        <button
+                            class="faq-question w-full flex justify-between items-center p-5 text-left font-medium hover:bg-gray-50 transition-colors">
+                            <span>如何选择适合我家狗狗的狗粮？</span>
+                            <i class="fa fa-chevron-down text-gray-400 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer p-5 bg-gray-50 hidden">
+                            <p class="text-gray-600">
+                                选择狗粮时，您需要考虑狗狗的年龄、体重、品种、活动水平和健康状况。我们的产品系列包括幼犬粮、成犬粮、老年犬粮以及针对特殊需求的配方，如敏感皮肤配方、大型犬专用粮等。您可以根据狗狗的具体情况选择适合的产品，或者咨询我们的客服获取专业建议。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ项2 -->
+                    <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+                        <button
+                            class="faq-question w-full flex justify-between items-center p-5 text-left font-medium hover:bg-gray-50 transition-colors">
+                            <span>如何从其他品牌狗粮过渡到你们的产品？</span>
+                            <i class="fa fa-chevron-down text-gray-400 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer p-5 bg-gray-50 hidden">
+                            <p class="text-gray-600">
+                                为了避免狗狗肠胃不适，建议采用7天过渡法：第1-2天，75%旧粮+25%新粮；第3-4天，50%旧粮+50%新粮；第5-6天，25%旧粮+75%新粮；第7天，完全更换为新粮。在过渡期间，注意观察狗狗的食欲和排便情况，如有异常，可适当延长过渡时间。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ项3 -->
+                    <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+                        <button
+                            class="faq-question w-full flex justify-between items-center p-5 text-left font-medium hover:bg-gray-50 transition-colors">
+                            <span>你们的狗粮保质期是多久？开封后如何保存？</span>
+                            <i class="fa fa-chevron-down text-gray-400 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer p-5 bg-gray-50 hidden">
+                            <p class="text-gray-600">
+                                我们的狗粮保质期为18个月。开封后，请将狗粮密封保存于阴凉干燥处，避免阳光直射和潮湿环境。建议使用密封袋或密封罐保存，以保持狗粮的新鲜度和营养成分。开封后的狗粮最好在3个月内食用完毕。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ项4 -->
+                    <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+                        <button
+                            class="faq-question w-full flex justify-between items-center p-5 text-left font-medium hover:bg-gray-50 transition-colors">
+                            <span>如果狗狗吃了你们的狗粮后出现不适怎么办？</span>
+                            <i class="fa fa-chevron-down text-gray-400 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer p-5 bg-gray-50 hidden">
+                            <p class="text-gray-600">
+                                如果您的狗狗在食用我们的产品后出现任何不适症状，如呕吐、腹泻、食欲不振等，请立即停止喂食并咨询兽医。我们非常重视每一位客户的反馈，如果您对产品有任何疑问或不满意，可以随时联系我们的客服团队，我们将竭诚为您解决问题。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ项5 -->
+                    <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+                        <button
+                            class="faq-question w-full flex justify-between items-center p-5 text-left font-medium hover:bg-gray-50 transition-colors">
+                            <span>你们的产品有哪些质量认证？</span>
+                            <i class="fa fa-chevron-down text-gray-400 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer p-5 bg-gray-50 hidden">
+                            <p class="text-gray-600">
+                                我们的所有产品均通过国家宠物食品质量安全认证，符合AAFCO（美国饲料管理协会）营养标准。我们严格把控生产过程的每一个环节，从原料采购到成品出厂，都经过严格的质量检测。此外，我们还获得了ISO9001质量管理体系认证和HACCP食品安全管理体系认证，确保产品的质量和安全。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 订阅区域 -->
+    <section class="py-16 bg-primary/5">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">订阅我们的通讯</h2>
+                <p class="text-gray-600 mb-8">获取最新的产品信息、喂养指南和专属优惠</p>
+
+                <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                    <input type="email" placeholder="您的邮箱地址"
+                        class="flex-1 px-5 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary">
+                    <button type="submit"
+                        class="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors">
+                        立即订阅
+                    </button>
+                </form>
+
+                <p class="text-gray-500 text-sm mt-4">我们尊重您的隐私，绝不会向第三方分享您的信息</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- 品牌信息 -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="h-10 w-10 rounded-full bg-white flex items-center justify-center">
+                            <i class="fa fa-paw text-primary text-xl"></i>
+                        </div>
+                        <span class="text-xl font-bold">PetNutrition</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">为您的爱宠提供最优质的营养解决方案，让它们健康快乐地成长。</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fa fa-youtube-play"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 快速链接 -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6">快速链接</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">首页</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">产品</a></li>
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition-colors">特色</a></li>
+                        <li><a href="#reviews" class="text-gray-400 hover:text-white transition-colors">评价</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-white transition-colors">常见问题</a></li>
+                    </ul>
+                </div>
+
+                <!-- 联系我们 -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6">联系我们</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-400">北京市朝阳区建国路88号</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-phone text-primary mr-3"></i>
+                            <span class="text-gray-400">400-888-8888</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-envelope text-primary mr-3"></i>
+                            <span class="text-gray-400">contact@petnutrition.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-clock-o text-primary mr-3"></i>
+                            <span class="text-gray-400">周一至周日 9:00-21:00</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 支付方式 -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6">支付方式</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="w-14 h-10 bg-white rounded-md flex items-center justify-center">
+                            <i class="fa fa-cc-visa text-dark text-xl"></i>
+                        </div>
+                        <div class="w-14 h-10 bg-white rounded-md flex items-center justify-center">
+                            <i class="fa fa-cc-mastercard text-dark text-xl"></i>
+                        </div>
+                        <div class="w-14 h-10 bg-white rounded-md flex items-center justify-center">
+                            <i class="fa fa-cc-paypal text-dark text-xl"></i>
+                        </div>
+                        <div class="w-14 h-10 bg-white rounded-md flex items-center justify-center">
+                            <i class="fa fa-credit-card text-dark text-xl"></i>
+                        </div>
+                        <div class="w-14 h-10 bg-white rounded-md flex items-center justify-center">
+                            <i class="fa fa-cc-amex text-dark text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2023 PetNutrition. 保留所有权利。</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-500 text-sm hover:text-white transition-colors">隐私政策</a>
+                        <a href="#" class="text-gray-500 text-sm hover:text-white transition-colors">使用条款</a>
+                        <a href="#" class="text-gray-500 text-sm hover:text-white transition-colors">配送信息</a>
+                        <a href="#" class="text-gray-500 text-sm hover:text-white transition-colors">退款政策</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 回到顶部按钮 -->
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary/90">
+        <i class="fa fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2', 'shadow-md');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.add('py-4');
+                navbar.classList.remove('py-2', 'shadow-md');
+            }
+        });
+
+        // 移动端菜单切换
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 回到顶部按钮
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+
+                    // 如果是移动端，点击后关闭菜单
+                    if (window.innerWidth < 768) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // 购物车侧边栏
+        const cartButton = document.getElementById('cart-button');
+        const cartSidebar = document.getElementById('cart-sidebar');
+        const closeCartButton = document.getElementById('close-cart');
+        const continueShoppingButton = document.getElementById('continue-shopping');
+
+        cartButton.addEventListener('click', () => {
+            cartSidebar.classList.remove('translate-x-full');
+        });
+
+        function closeCart() {
+            cartSidebar.classList.add('translate-x-full');
+        }
+
+        closeCartButton.addEventListener('click', closeCart);
+        continueShoppingButton.addEventListener('click', closeCart);
+
+        // 产品详情模态框
+        const productModal = document.getElementById('product-modal');
+        const closeModalButton = document.getElementById('close-modal');
+        const quickViewButtons = document.querySelectorAll('.quick-view-btn');
+        const modalAddToCartButton = document.getElementById('modal-add-to-cart');
+
+        function openModal() {
+            productModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            productModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        quickViewButtons.forEach(button => {
+            button.addEventListener('click', openModal);
+        });
+
+        closeModalButton.addEventListener('click', closeModal);
+
+        // 点击模态框外部关闭
+        productModal.addEventListener('click', (e) => {
+            if (e.target === productModal) {
+                closeModal();
+            }
+        });
+
+        // FAQ 折叠
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+
+                answer.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // 产品详情选项卡
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // 移除所有活动状态
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('active', 'border-primary', 'text-primary');
+                    btn.classList.add('border-transparent', 'text-gray-500');
+                });
+
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                    content.classList.add('hidden');
+                });
+
+                // 添加当前活动状态
+                button.classList.add('active', 'border-primary', 'text-primary');
+                button.classList.remove('border-transparent', 'text-gray-500');
+
+                const target = button.getAttribute('data-target');
+                const content = document.getElementById(target);
+                content.classList.remove('hidden');
+                content.classList.add('active');
+            });
+        });
+
+        // 数量加减
+        const quantityMinus = document.querySelector('.quantity-btn.minus');
+        const quantityPlus = document.querySelector('.quantity-btn.plus');
+        const quantityInput = document.getElementById('quantity-input');
+
+        quantityMinus.addEventListener('click', () => {
+            const currentValue = parseInt(quantityInput.value);
+            if (currentValue > 1) {
+                quantityInput.value = currentValue - 1;
+            }
+        });
+
+        quantityPlus.addEventListener('click', () => {
+            const currentValue = parseInt(quantityInput.value);
+            quantityInput.value = currentValue + 1;
+        });
+
+        // 规格选择
+        const specButtons = document.querySelectorAll('.spec-btn');
+        specButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                specButtons.forEach(btn => {
+                    btn.classList.remove('active', 'border-primary', 'text-primary');
+                    btn.classList.add('border-gray-200', 'text-gray-600');
+                });
+
+                button.classList.add('active', 'border-primary', 'text-primary');
+                button.classList.remove('border-gray-200', 'text-gray-600');
+            });
+        });
+
+        // 购物车功能
+        const cartItemsList = document.getElementById('cart-items-list');
+        const emptyCart = document.getElementById('empty-cart');
+        const cartSummary = document.getElementById('cart-summary');
+        const cartCount = document.querySelector('#cart-button span');
+        const subtotalElement = document.getElementById('subtotal');
+        const shippingElement = document.getElementById('shipping');
+        const totalElement = document.getElementById('total');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+
+        let cart = [];
+
+        // 初始化购物车
+        function initCart() {
+            const savedCart = localStorage.getItem('petNutritionCart');
+            if (savedCart) {
+                cart = JSON.parse(savedCart);
+                updateCart();
+            }
+        }
+
+        // 添加商品到购物车
+        function addToCart(productId, name, price, quantity = 1) {
+            const existingItem = cart.find(item => item.id === productId);
+
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({
+                    id: productId,
+                    name: name,
+                    price: price,
+                    quantity: quantity
+                });
+            }
+
+            // 保存到localStorage
+            localStorage.setItem('petNutritionCart', JSON.stringify(cart));
+
+            updateCart();
+            openCart();
+        }
+
+        // 更新购物车显示
+        function updateCart() {
+            // 清空购物车列表
+            cartItemsList.innerHTML = '';
+
+            if (cart.length === 0) {
+                emptyCart.classList.remove('hidden');
+                cartItemsList.classList.add('hidden');
+                cartSummary.classList.add('hidden');
+                cartCount.textContent = '0';
+                return;
+            }
+
+            // 显示购物车列表
+            emptyCart.classList.add('hidden');
+            cartItemsList.classList.remove('hidden');
+            cartSummary.classList.remove('hidden');
+
+            // 计算总数
+            let totalItems = 0;
+            let subtotal = 0;
+
+            cart.forEach(item => {
+                totalItems += item.quantity;
+                subtotal += item.price * item.quantity;
+
+                // 添加商品到购物车列表
+                const itemElement = document.createElement('div');
+                itemElement.className = 'flex items-center';
+                itemElement.innerHTML = `
+                    <div class="w-16 h-16 bg-gray-100 rounded-lg overflow-hidden mr-4">
+                        <img src="https://picsum.photos/seed/dogfood${item.id}/100/100" alt="${item.name}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-medium">${item.name}</h4>
+                        <div class="flex items-center mt-1">
+                            <button class="quantity-btn-minus w-6 h-6 flex items-center justify-center border border-gray-200 rounded-l hover:bg-gray-100 transition-colors" data-id="${item.id}">
+                                <i class="fa fa-minus text-xs"></i>
+                            </button>
+                            <input type="number" value="${item.quantity}" min="1" class="w-10 h-6 text-center border-t border-b border-gray-200 focus:outline-none text-sm" data-id="${item.id}">
+                            <button class="quantity-btn-plus w-6 h-6 flex items-center justify-center border border-gray-200 rounded-r hover:bg-gray-100 transition-colors" data-id="${item.id}">
+                                <i class="fa fa-plus text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="font-medium">¥${(item.price * item.quantity).toFixed(2)}</p>
+                        <button class="remove-item text-gray-400 hover:text-red-500 transition-colors mt-1" data-id="${item.id}">
+                            <i class="fa fa-trash-o"></i>
+                        </button>
+                    </div>
+                `;
+
+                cartItemsList.appendChild(itemElement);
+            });
+
+            // 更新购物车数量
+            cartCount.textContent = totalItems;
+
+            // 计算运费和总计
+            const shipping = subtotal > 0 ? 0 : 0; // 满0元免运费
+            const total = subtotal + shipping;
+
+            // 更新价格显示
+            subtotalElement.textContent = `¥${subtotal.toFixed(2)}`;
+            shippingElement.textContent = shipping > 0 ? `¥${shipping.toFixed(2)}` : '免费';
+            totalElement.textContent = `¥${total.toFixed(2)}`;
+
+            // 添加事件监听器
+            document.querySelectorAll('.quantity-btn-minus').forEach(button => {
+                button.addEventListener('click', () => {
+                    const id = button.getAttribute('data-id');
+                    const item = cart.find(item => item.id === id);
+                    if (item.quantity > 1) {
+                        item.quantity--;
+                    } else {
+                        cart = cart.filter(item => item.id !== id);
+                    }
+                    localStorage.setItem('petNutritionCart', JSON.stringify(cart));
+                    updateCart();
+                });
+            });
+
+            document.querySelectorAll('.quantity-btn-plus').forEach(button => {
+                button.addEventListener('click', () => {
+                    const id = button.getAttribute('data-id');
+                    const item = cart.find(item => item.id === id);
+                    item.quantity++;
+                    localStorage.setItem('petNutritionCart', JSON.stringify(cart));
+                    updateCart();
+                });
+            });
+
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', () => {
+                    const id = button.getAttribute('data-id');
+                    cart = cart.filter(item => item.id !== id);
+                    localStorage.setItem('petNutritionCart', JSON.stringify(cart));
+                    updateCart();
+                });
+            });
+        }
+
+        // 打开购物车
+        function openCart() {
+            cartSidebar.classList.remove('translate-x-full');
+        }
+
+        // 初始化
+        initCart();
+
+        // 添加到购物车按钮事件
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const id = button.getAttribute('data-id');
+                const name = button.getAttribute('data-name');
+                const price = parseFloat(button.getAttribute('data-price'));
+
+                addToCart(id, name, price);
+            });
+        });
+
+        // 模态框中的添加到购物车按钮
+        modalAddToCartButton.addEventListener('click', () => {
+            const id = '1'; // 默认使用第一个产品ID
+            const name = document.getElementById('modal-title').textContent;
+            const price = parseFloat(document.getElementById('modal-price').textContent.replace('¥', ''));
+            const quantity = parseInt(document.getElementById('quantity-input').value);
+
+            addToCart(id, name, price, quantity);
+            closeModal();
+        });
+
+        // 产品筛选
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const productCards = document.querySelectorAll('.product-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // 移除所有按钮的活动状态
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('active', 'bg-primary', 'text-white');
+                    btn.classList.add('bg-gray-100', 'text-dark');
+                });
+
+                // 添加当前按钮的活动状态
+                button.classList.add('active', 'bg-primary', 'text-white');
+                button.classList.remove('bg-gray-100', 'text-dark');
+
+                // 筛选产品
+                const filter = button.textContent.trim();
+
+                productCards.forEach(card => {
+                    // 这里简化处理，实际应用中应该根据产品类别进行筛选
+                    if (filter === '全部产品') {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+    </body>
+
+</html>
